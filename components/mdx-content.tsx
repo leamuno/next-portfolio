@@ -6,7 +6,6 @@ import dynamic from 'next/dynamic';
 // Dynamic import of Counter to ensure it is client-side only
 const Counter = dynamic(() => import('@/components/counter'), { ssr: false });
 
-// Disable for a specific line
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Code({ children, ...props }: any) {
   const codeHTML = highlight(children);

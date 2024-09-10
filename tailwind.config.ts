@@ -1,4 +1,6 @@
+/* eslint-disable */
 const { fontFamily } = require('tailwindcss/defaultTheme')
+/* eslint-enable */
 import type { Config } from 'tailwindcss'
 
 const config = {

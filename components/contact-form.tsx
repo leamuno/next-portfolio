@@ -1,7 +1,7 @@
 'use client'
 
 import { z } from 'zod'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { toast } from 'sonner'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -29,10 +29,14 @@ export default function ContactForm() {
   })
 
   const processForm: SubmitHandler<Inputs> = async data => {
+    console.log(data)
+
     const result = await sendEmail(data)
+    console.log(result)
 
     if (result?.error) {
       toast.error('An error occurred! Please try again.')
+      console.log(result.error)
       return
     }
 
@@ -143,12 +147,12 @@ export default function ContactForm() {
               {isSubmitting ? 'Submitting...' : 'Contact Me'}
             </Button>
           </div>
-          <p className='mt-4 text-xs text-muted-foreground'>
+          {/* <p className='mt-4 text-xs text-muted-foreground'>
             By submitting this form, I agree to the{' '}
             <Link href='/privacy' className='font-bold'>
               privacy&nbsp;policy.
             </Link>
-          </p>
+          </p> */}
         </form>
       </div>
     </section>
