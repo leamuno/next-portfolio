@@ -36,7 +36,7 @@ export default function ContactForm() {
 
     if (result?.error) {
       toast.error('An error occurred! Please try again.')
-      console.log(result.error)
+      console.log(result)
       return
     }
 
